@@ -1,6 +1,10 @@
-import { Box, Button, Heading, ResponsiveContext, Text } from 'grommet'
+import { Box, Button, Heading, Image, ResponsiveContext, Stack, Text } from 'grommet'
+import IMG1 from '../../assets/happy.jpg'
 
-function Schedule() {
+function Schedule({open}) {
+  const opener = () => {
+    open()
+  }
   return (
     <ResponsiveContext.Consumer>
       {(size) => size === 'small'
@@ -19,45 +23,50 @@ function Schedule() {
             >
               <Box
                 background='url(happy.jpg)'
-                width='1000px'
-                height='medium'
+                height='small'
+                fill
               >
-                <Box
-                  fill
-                  background={{
-                    color: 'dark-2',
-                    opacity:'medium'
-                  }}
-                  pad='medium'
-                  align='start'
-                  justify='center'
-                >
+                <Stack>
+                  <Box height='small'>
+                    <Image fill='vertical' fit='cover' src={IMG1}/>
+                  </Box>
                   <Box
-                    width='medium'
+                    fill
                     background={{
-                      color: 'light-2',
-                      opacity:'strong'
+                      color: 'dark-2',
+                      opacity:'medium'
                     }}
                     pad='medium'
+                    align='start'
+                    justify='center'
                   >
-                    <Heading 
-                      margin='none'
+                    <Box
+                      width='medium'
+                      background={{
+                        color: 'light-2',
+                        opacity:'strong'
+                      }}
+                      pad='medium'
                     >
-                      Schedule A Tour
-                    </Heading>
-                    <Text
-                        margin={{
-                          bottom: 'xsmall'
-                        }}
-                        size='small'
+                      <Heading 
+                        margin='none'
                       >
-                        There’s no better way to learn about a senior living community than to visit.
-                      </Text>
-                      <Box align="start">
-                        <Button color='#006ee6' primary label="Schedule a Tour" onClick={() => {}} />
-                      </Box>
+                        Contact Us
+                      </Heading>
+                      <Text
+                          margin={{
+                            bottom: 'xsmall'
+                          }}
+                          size='small'
+                        >
+                          There’s no better way to learn about a senior living community than to visit.
+                        </Text>
+                        <Box align="start">
+                          <Button color='#006ee6' primary label="Contact Us" onClick={opener} />
+                        </Box>
+                    </Box>
                   </Box>
-                </Box>
+                </Stack>
               </Box>
             </Box>
         )
@@ -75,46 +84,45 @@ function Schedule() {
             }}
             >
               <Box
-                background='url(happy.jpg)'
                 width='1000px'
                 height='medium'
               >
-                <Box
-                  fill
-                  background={{
-                    color: 'dark-2',
-                    opacity:'medium'
-                  }}
-                  pad='medium'
-                  align='start'
-                  justify='center'
-                >
-                  <Box
-                    width='medium'
-                    background={{
-                      color: 'light-2',
-                      opacity:'strong'
-                    }}
-                    pad='medium'
-                  >
-                    <Heading 
-                      margin='none'
-                    >
-                      Schedule A Tour
-                    </Heading>
-                    <Text
-                        margin={{
-                          bottom: 'xsmall'
-                        }}
-                        size='small'
-                      >
-                        There’s no better way to learn about a senior living community than to visit.
-                      </Text>
-                      <Box align="start">
-                        <Button color='#006ee6' primary label="Schedule a Tour" onClick={() => {}} />
-                      </Box>
+                <Stack anchor='left'>
+                  <Box width='1000px' height='medium'>
+                    <Image fill='vertical' fit='cover' src={IMG1}/>
                   </Box>
-                </Box>
+                  <Box
+                    pad='medium'
+                    align='start'
+                    justify='center'
+                  >
+                    <Box
+                      width='medium'
+                      background={{
+                        color: 'light-2',
+                        opacity:'strong'
+                      }}
+                      pad='medium'
+                    >
+                      <Heading 
+                        margin='none'
+                      >
+                        Schedule A Tour
+                      </Heading>
+                      <Text
+                          margin={{
+                            bottom: 'xsmall'
+                          }}
+                          size='small'
+                        >
+                          There’s no better way to learn about a senior living community than to visit.
+                        </Text>
+                        <Box align="start">
+                          <Button color='#006ee6' primary label="Schedule a Tour" onClick={opener} />
+                        </Box>
+                    </Box>
+                  </Box>
+                </Stack>
               </Box>
             </Box>
         )

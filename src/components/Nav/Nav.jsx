@@ -7,7 +7,7 @@ function Nav() {
         {(size) => size === 'small' 
             ? (
                 <Header 
-                    background='#999999'
+                    background='#555555'
                     pad={{
                         vertical: 'small',
                         horizontal: 'medium'
@@ -44,7 +44,7 @@ function Nav() {
             )
             : (
                 <Box
-                     background="#999999"
+                     background="#555555"
                     align='center'
                     justify='center'
                     border={{

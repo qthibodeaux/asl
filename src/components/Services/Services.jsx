@@ -12,10 +12,10 @@ function Services() {
                 side: 'bottom',
                 size: 'xsmall'
             }}
+            pad={{ bottom: 'small'}}
             >
               <Box
                 align='center'
-                width='1000px'
               >
                 <Box>
                   <Heading color='#006ee6'>

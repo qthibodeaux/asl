@@ -8,7 +8,7 @@ function Bottom() {
         ? (
             
               <Footer
-                background='#999999'
+                background='#555555'
                 pad={{
                   vertical: 'large'
                 }}
@@ -73,7 +73,7 @@ function Bottom() {
           )
         : (
             <Box 
-              background='#999999'
+              background='#555555'
               align='center'
               justify='center'
               border={{
