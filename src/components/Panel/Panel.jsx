@@ -130,6 +130,7 @@ function Panel() {
           {show && (
               <Layer
                 onEsc={() => setShow(false)}
+                onClickOutside={() => setShow(false)}
               >
                 <Box
                   align='center'
@@ -141,11 +142,15 @@ function Panel() {
                     justify='center'
                     direction='row'
                     pad='small'
+                    background={{
+                      color: '#CCCCCC',
+                      opacity:'medium'
+                    }}
                   >
                     <Button
                       primary
                       color='#006ee6'
-                      label='close'
+                      label='Close'
                       onClick={() => setShow(false)} 
                       margin={{ top: 'xsmall'}}
                     />
@@ -218,9 +223,14 @@ function Panel() {
             {show && (
               <Layer
                 onEsc={() => setShow(false)}
+                onClickOutside={() => setShow(false)}
               >
                 <Box
                   gap='small'
+                  background={{
+                    color: '#CCCCCC',
+                    opacity:'medium'
+                  }}
                 >
                   <Box
                     align='center'
@@ -231,7 +241,7 @@ function Panel() {
                     <Button
                       primary
                       color='#006ee6'
-                      label='close'
+                      label='Close'
                       onClick={() => setShow(false)} 
                       margin={{ top: 'xsmall'}}
                     />

@@ -148,9 +148,8 @@ function FormSet({close}) {
                         </FormField>
 
                         <Box direction="row" justify="between" margin={{ top: 'medium' }} gap='small'>
-                            <Button label="Cancel" />
-                            <Button type="reset" label="Reset" />
-                            <Button type="submit" label="Update" primary />
+                            <Button color='#006ee6' type="reset" label="Reset" />
+                            <Button color='#006ee6' primary type="submit" label="Update" />
                         </Box>
                     </Form>
                 </Box>
@@ -169,7 +168,7 @@ const MessageSent = ({close}) => {
             justify='center'
         >
             <Heading>Message Sent</Heading>
-            <Button label='Close' onClick={closer}/>
+            <Button  color='#006ee6' primary label='Close' onClick={closer}/>
         </Box>
     )
 }

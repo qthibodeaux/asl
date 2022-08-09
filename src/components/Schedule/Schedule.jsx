@@ -10,6 +10,7 @@ function Schedule({open}) {
       {(size) => size === 'small'
         ? (
             <Box
+              id='contact'
               align='center'
               justify='center'
               pad={{

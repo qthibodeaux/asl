@@ -1,7 +1,7 @@
 import { Anchor, Box, Header, Heading, ResponsiveContext, Button  } from 'grommet'
 import { Contact, Home, MapLocation, Overview } from 'grommet-icons'
 
-function Nav() {
+function Nav({open}) {
   return (
     <ResponsiveContext.Consumer>
         {(size) => size === 'small' 
@@ -38,7 +38,7 @@ function Nav() {
                         }}/>
                         <Button icon={<Contact color='white'/>}  style={{
                             transition: 'all 400ms ease'
-                        }}/>
+                        }} onClick={() => open()} href='#contact'/>
                     </Box>
                 </Header>
             )
@@ -72,19 +72,27 @@ function Nav() {
                             pad='xsmall'
                             gap='small'
                         >
-                            {
-                                items.map(({ref, label, scroll}, key) => {
-                                    return (
-                                            <Anchor 
-                                            color="white" 
-                                            size="small"
-                                            key={key} 
-                                            label={label}
-                                            onClick={() => {}}
-                                            />
-                                    )
-                                })
-                            }
+                            <Anchor 
+                                color="white" 
+                                size="small"
+                                label='About'
+                                href='#about'
+                                onClick={() => {}}
+                            />
+                            <Anchor 
+                                color="white" 
+                                size="small"
+                                label='Amenities'
+                                href='#amenities'
+                                onClick={() => {}}
+                            />
+                            <Anchor 
+                                color="white" 
+                                size="small"
+                                label='Contact'
+                                href='#contact'
+                                onClick={() => open()}
+                            />
                         </Box>
                     </Header>
                 </Box>
@@ -92,20 +100,5 @@ function Nav() {
     </ResponsiveContext.Consumer>
   )
 }
-
-const items = [
-    {
-        ref: 'about',
-        label: "About",
-    },
-    {
-        ref: 'amenities',
-        label: "Amenities",
-    },
-    {
-        ref: '#',
-        label: "Contact",
-    }
-]
 
 export default Nav

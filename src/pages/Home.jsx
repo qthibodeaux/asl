@@ -1,15 +1,8 @@
-import { useState } from 'react'
 import { Box, Layer } from 'grommet';
 import { Amenities, BannerOne, Community, FormSet, Hero, Panel, Schedule, Services } from '../components';
 
-function Home() {
-  const [form, setForm] = useState(false)
-  const open = () => {
-    setForm(true)
-  }
-  const close = () => {
-    setForm(false)
-  }
+function Home({open, close, form, setForm}) {
+  
 
   return (
    <Box>
