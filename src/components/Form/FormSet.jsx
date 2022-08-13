@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { Box, Button, Form, FormField, Heading, TextInput } from 'grommet'
 import { Close, StatusGood } from 'grommet-icons'
 import emailjs from '@emailjs/browser';
+import axios from 'axios';
 
 function FormSet({close}) {
     const [name, setName] = useState('')
@@ -14,9 +15,37 @@ function FormSet({close}) {
         close()
     }
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
-    
+        console.log('before axy')
+        try {
+            console.log('axy?')
+            const response = axios.post('/twi', {
+                name: name,
+                phone: phone,
+                email: email
+            })
+
+            console.log(response)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+        try {
+            console.log('axy2')
+            const response = axios.get('/', {
+                name: name,
+                phone: phone,
+                email: email
+            })
+
+            console.log(response)
+
+        } catch (error) {
+            console.log(error)
+        }
+        
         emailjs.sendForm('service_xsn8o3m', 'template_c27qb0g', form.current, '5-aE0hdZ4fPmHoTJk')
           .then((result) => {
               console.log(result.text);

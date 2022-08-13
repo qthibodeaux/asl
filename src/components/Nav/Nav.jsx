@@ -7,7 +7,7 @@ function Nav({open}) {
         {(size) => size === 'small' 
             ? (
                 <Header 
-                    background='#555555'
+                    background='#006ee6'
                     pad={{
                         vertical: 'small',
                         horizontal: 'medium'
@@ -44,7 +44,7 @@ function Nav({open}) {
             )
             : (
                 <Box
-                     background="#555555"
+                     background="#006ee6"
                     align='center'
                     justify='center'
                     border={{
@@ -54,7 +54,7 @@ function Nav({open}) {
                     }}
                 >
                     <Header 
-                        pad={{ vertical: 'medium'}}
+                        pad={{ vertical: 'small'}}
                         sticky="scrollup"
                         width="1000px"
                     >
